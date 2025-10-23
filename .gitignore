@@ -1,0 +1,18 @@
+# macOS sistem dosyaları
+.DS_Store
+.AppleDouble
+
+# Editör yapılandırma dosyaları
+.vscode/
+.idea/
+
+# Bağımlılık klasörleri (eğer Composer kullansaydık)
+# vendor/
+
+# Log dosyaları
+*.log
+logs/
+
+# Geçici dosyalar
+*.tmp
+*.temp

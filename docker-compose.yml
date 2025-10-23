@@ -1,0 +1,20 @@
+version: '3.8' # Docker Compose versiyonu
+
+services:
+  web:
+    # İmajı mevcut dizindeki Dockerfile'dan inşa et
+    build: .
+    # İnşa edilen imaja kolay bir isim verelim (paylaşırken kullanacağız)
+    # Bu isim: senin_docker_hub_kullanici_adın/soylu-seyahat-app:latest olacak
+    # Şimdilik sadece "soylu-seyahat-app" adını verelim, Docker Hub için sonra etiketleriz.
+    image: soylu-seyahat-app:latest 
+    container_name: soylu_seyahat_app_test # Yerel test için konteyner adı
+    # Yerel test için port yönlendirmesi (Bilgisayarının 8080 portu, konteynerin 80 portuna bağlanır)
+    ports:
+      - "8080:80"
+    # --- ÖNEMLİ: volumes kısmı YORUM SATIRI YAPILDI VEYA KALDIRILDI ---
+    # Bu sayede konteyner, yerel dosyalarına değil, imajın içine kopyalanan dosyalara bakar.
+    # Bu, imajın taşınabilirliğini sağlar.
+    # volumes:
+    #  - .:/var/www/html 
+    # --- BİTTİ ---
